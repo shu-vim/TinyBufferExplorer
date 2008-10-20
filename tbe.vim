@@ -465,13 +465,13 @@ endfunction
 function! s:TBE_showWindow(name, showVertically)
     let winNum = bufwinnr(a:name)
     if winNum != -1
-        execute winNum . 'wincmd w'
+        execute 'keepalt ' . winNum . 'wincmd w'
         return
     endif
 
     let showMethod = (a:showVertically ? 'vertical new' : 'new')
 
-    execute showMethod . ' ' . a:name
+    execute 'keepalt ' . showMethod . ' ' . a:name
 
     setlocal nowrap nonumber buftype=nofile bufhidden=delete noswapfile
 endfunction
