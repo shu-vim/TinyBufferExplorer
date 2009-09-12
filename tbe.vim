@@ -267,11 +267,7 @@ endfunction
 function! s:TBE_renderCurrentGroup(groupNum)
     setlocal modifiable noreadonly
 
-    " stop the yank jack
-    let old_yank = @"
-    let old_yank0 = @0
-
-    %delete
+    %d
 
     call setline('.', s:TBE_renderGroupLine(a:groupNum, 0, 0, 0))
     let i = 1
@@ -319,9 +315,6 @@ function! s:TBE_renderCurrentGroup(groupNum)
     call s:TBE_adjustWindowSize()
 
     normal gg
-
-    let @0 = old_yank0
-    let @" = old_yank
 
     execute s:TBE_bufferHeaderLineCount + 1
     setlocal nomodifiable readonly
