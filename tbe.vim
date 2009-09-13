@@ -1,6 +1,5 @@
 " Tiny Buffer Explorer
 "
-" Version: 1.0.0
 " Description:
 "
 "   A 1-file buffer list plugin with grouping.
@@ -24,7 +23,6 @@
 "           the current buffer is
 "       4. customizable list format
 "
-" Last Change: 05-Mar-2006.
 " Maintainer: Shuhei Kubota <chimachima@gmail.com>
 "
 " Usage:
