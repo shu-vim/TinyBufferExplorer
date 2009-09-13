@@ -319,10 +319,10 @@ function! s:TBE_renderCurrentGroup(groupNum)
 
     normal gg
 
-    let @" = old_yank
-
     execute s:TBE_bufferHeaderLineCount + 1
     setlocal nomodifiable readonly
+
+    let @" = old_yank
 endfunction
 
 function! s:TBE_adjustWindowSize()
@@ -585,6 +585,9 @@ endfunction
 function! s:TBE_renderGroups()
     setlocal modifiable noreadonly
 
+    " stop the yank hijack
+    let old_yank = @"
+
     %d
 
     " render group line
@@ -629,6 +632,8 @@ function! s:TBE_renderGroups()
     normal gg
     execute s:TBE_groupHeaderLineCount + 1 + s:TBE__currentGroupNumOrder
     setlocal nomodifiable readonly
+
+    let @" = old_yank
 endfunction
 
 function! s:TBE_jumpToGroup(order)
