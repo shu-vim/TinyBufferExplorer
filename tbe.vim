@@ -1328,4 +1328,4 @@ endfunction
 
 call s:TBE_init()
 
-" vim: set fenc=utf-8 ff=unix ts=4 sts=4 sw=4 et : 
+" vim: set ts=4 sts=4 sw=4 et : 
